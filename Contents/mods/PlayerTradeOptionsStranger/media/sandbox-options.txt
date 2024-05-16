@@ -1,0 +1,23 @@
+VERSION = 1,
+
+option PlayerTradeOptions.disabled = {
+	type = boolean,
+	default = false,
+	page = PlayerTradeOptionsStranger,
+	translation = PlayerTradeOptions_disabled,
+}
+
+option PlayerTradeOptions.useCharacterName = {
+	type = boolean,
+	default = false,
+	page = PlayerTradeOptionsStranger,
+	translation = PlayerTradeOptions_useCharacterName,
+}
+
+option PlayerTradeOptions.noName = {
+	type = boolean,
+	default = false,
+	page = PlayerTradeOptionsStranger,
+	translation = PlayerTradeOptions_noName,
+}
+

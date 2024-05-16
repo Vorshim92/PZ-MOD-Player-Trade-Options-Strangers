@@ -1,0 +1,8 @@
+ContextMenu_EN = {
+    
+    ContextMenu_PlayerTradeOptions_Disabled = "Trade is disabled",
+    ContextMenu_PlayerTradeOptions_noName = "Trade with Stranger",
+	ContextMenu_Trade = "Trade",
+	ContextMenu_TradeWithPlayer = "Trade with",
+	ContextMenu_Stranger = "Stranger",
+}

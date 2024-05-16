@@ -1,0 +1,9 @@
+ContextMenu_EN = {
+    
+    ContextMenu_PlayerTradeOptions_Disabled = "Trade disabilitato",
+    ContextMenu_PlayerTradeOptions_noName = "Scambia con",
+	ContextMenu_Trade = "Scambia",
+	ContextMenu_TradeWithPlayer = "Scambia con",
+	ContextMenu_Stranger = "Viandante",
+
+}

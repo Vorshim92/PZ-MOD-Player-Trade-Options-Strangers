@@ -1,0 +1,6 @@
+version=1
+id=3224076062
+title=Player Trade Options [FIX] + Stranger
+description=This is a fix mod of Player Trade Options plus some feature like Stranger name
+tags=Interface;Items;Misc;Multiplayer
+visibility=public

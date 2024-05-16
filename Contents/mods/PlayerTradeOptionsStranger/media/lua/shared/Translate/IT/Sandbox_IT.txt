@@ -1,0 +1,11 @@
+Sandbox_EN = {
+
+    Sandbox_PlayerTradeOptionsStranger = "Opzioni di Scambio Giocatore",
+    Sandbox_PlayerTradeOptions_useCharacterName = "Usa Nome Personaggio",
+    Sandbox_PlayerTradeOptions_useCharacterName_tooltip = "Usa il nome completo del personaggio invece del nome utente del giocatore",
+    Sandbox_PlayerTradeOptions_noName = "Scambio Senza Nome",
+    Sandbox_PlayerTradeOptions_noName_tooltip = "Disabilita questi dannati nomi per Pyno",
+    Sandbox_PlayerTradeOptions_disabled = "Disabilitato",
+    Sandbox_PlayerTradeOptions_disabled_tooltip = "Disabilita l'opzione di scambio",
+
+}

@@ -1,11 +1,11 @@
 Sandbox_EN = {
 
     Sandbox_PlayerTradeOptionsStranger = "Player Trade Options",
-    Sandbox_PlayerTradeOptions_useCharacterName = "Use Character Name",
+    Sandbox_PlayerTradeOptions_useCharacterName = "Use Character Name and Surname",
     Sandbox_PlayerTradeOptions_useCharacterName_tooltip = "Use the character full name instead of the player username",
-    Sandbox_PlayerTradeOptions_noName = "Trade without name",
-    Sandbox_PlayerTradeOptions_noName_tooltip = "Disable this fucking names for Pyno",
-    Sandbox_PlayerTradeOptions_disabled = "Disabled",
+    Sandbox_PlayerTradeOptions_noName = "Trade without name, Stranger mode",
+    Sandbox_PlayerTradeOptions_noName_tooltip = "Disable this fucking names for Pyno! It will appear Stranger",
+    Sandbox_PlayerTradeOptions_disabled = "Trade Disabled",
     Sandbox_PlayerTradeOptions_disabled_tooltip = "Disable the trade option",
 
 }

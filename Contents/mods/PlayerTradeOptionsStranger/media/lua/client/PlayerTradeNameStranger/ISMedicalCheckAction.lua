@@ -41,23 +41,24 @@ function ISMedicalCheckAction:perform()
 
     -- Esegui il codice della funzione originale
     ISBaseTimedAction.perform(self)
-
-    -- Determina il nuovo titolo
-    local newTitle
-    if SandboxVars.PlayerTradeOptions.useCharacterName then 
-        newTitle = getText("IGUI_health_playerHealth", self.otherPlayer:getDescriptor():getForename() .. " " .. self.otherPlayer:getDescriptor():getSurname())
-    elseif SandboxVars.PlayerTradeOptions.noName then
-        newTitle = getText("IGUI_health_playerHealth", " Viandante")
-    else
-        newTitle = getText("IGUI_health_playerHealth", self.otherPlayer:getUsername())
-    end
-
-    -- Aggiorna il titolo della finestra esistente o appena creata
-    if healthWindow then
-        healthWindow.title = newTitle
-    elseif self.healthPanel:getParent() then
-        self.healthPanel:getParent().title = newTitle
-    else
-        self.healthPanel.title = newTitle
+    if not (getDebug() or (isClient() and (getAccessLevel() == "admin"))) then
+        -- Determina il nuovo titolo
+        local newTitle
+        if SandboxVars.PlayerTradeOptions.useCharacterName then 
+            newTitle = getText("IGUI_health_playerHealth", self.otherPlayer:getDescriptor():getForename() .. " " .. self.otherPlayer:getDescriptor():getSurname())
+        elseif SandboxVars.PlayerTradeOptions.noName then
+            newTitle = getText("IGUI_health_playerHealth", " Viandante")
+        else
+            newTitle = getText("IGUI_health_playerHealth", self.otherPlayer:getUsername())
+        end
+   
+        -- Aggiorna il titolo della finestra esistente o appena creata
+        if healthWindow then
+            healthWindow.title = newTitle
+        elseif self.healthPanel:getParent() then
+            self.healthPanel:getParent().title = newTitle
+        else
+            self.healthPanel.title = newTitle
+        end
     end
 end

@@ -21,3 +21,10 @@ option PlayerTradeOptions.noName = {
 	translation = PlayerTradeOptions_noName,
 }
 
+option PlayerTradeOptions.SafehoseWhitelistOn = {
+	type = boolean,
+	default = false,
+	page = PlayerTradeOptionsStranger,
+	translation = PlayerTradeOptions_SafehoseWhitelist,
+}
+

@@ -110,6 +110,7 @@ end
 -- SEZIONE RICEZIONE INVITO
 
 -- Salva un riferimento alla funzione originale
+ISSafehouseUI.ReceiveSafehouseInvite_orig = ISSafehouseUI.ReceiveSafehouseInvite
 -- Sovrascrivi la funzione ReceiveSafehouseInvite
 local function CustomReceiveSafehouseInvite(safehouse, host)
     if ISSafehouseUI.inviteDialogs[host] then
@@ -117,21 +118,22 @@ local function CustomReceiveSafehouseInvite(safehouse, host)
         ISSafehouseUI.inviteDialogs[host] = nil
     end
 
-    if not SafeHouse.hasSafehouse(getPlayer()) then
-        -- Ottieni il nome del personaggio utilizzando getCharacterName
-        local displayName = host
-        if SandboxVars.PlayerTradeOptions.useCharacterName or SandboxVars.PlayerTradeOptions.noName then
-            displayName = getCharacterName(host, host)
+    local displayName = host
+    if SandboxVars.PlayerTradeOptions.useCharacterName or SandboxVars.PlayerTradeOptions.noName then
+        displayName = getCharacterName(host, host)
+   end
+    if not SandboxVars.PlayerTradeOptions.SafehoseWhitelistOn then
+        if not SafeHouse.hasSafehouse(getPlayer()) then
+            local modal = ISModalDialog:new(getCore():getScreenWidth() / 2 - 175, getCore():getScreenHeight() / 2 - 75, 350, 150,   getText("IGUI_SafehouseUI_Invitation", displayName), true, nil, ISSafehouseUI.onAnswerSafehouseInvite)
+            modal:initialise()
+            modal:addToUIManager()
+            modal.safehouse = safehouse
+            modal.host = host
+            modal.moveWithMouse = true
+            ISSafehouseUI.inviteDialogs[host] = modal
         end
-
-        -- Crea il dialogo di invito utilizzando displayName
-        local modal = ISModalDialog:new(getCore():getScreenWidth() / 2 - 175, getCore():getScreenHeight() / 2 - 75, 350, 150, getText("IGUI_SafehouseUI_Invitation", displayName), true, nil, ISSafehouseUI.onAnswerSafehouseInvite)
-        modal:initialise()
-        modal:addToUIManager()
-        modal.safehouse = safehouse
-        modal.host = host
-        modal.moveWithMouse = true
-        ISSafehouseUI.inviteDialogs[host] = modal
+    else 
+        ISSafehouseUI.ReceiveSafehouseInvite_orig(safehouse, displayName)
     end
 end
 
